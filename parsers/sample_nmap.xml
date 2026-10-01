@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<nmaprun>
+    <host>
+        <address addr="192.168.1.10" addrtype="ipv4"/>
+        <ports>
+            <port protocol="tcp" portid="22">
+                <state state="open"/>
+                <service name="ssh"/>
+            </port>
+            <port protocol="tcp" portid="80">
+                <state state="open"/>
+                <service name="http"/>
+            </port>
+        </ports>
+    </host>
+
+    <host>
+        <address addr="192.168.1.30" addrtype="ipv4"/>
+        <ports>
+            <port protocol="tcp" portid="21">
+                <state state="open"/>
+                <service name="ftp"/>
+            </port>
+        </ports>
+    </host>
+
+</nmaprun>

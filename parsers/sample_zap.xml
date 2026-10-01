@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<OWASPZAPReport>
+
+    <site name="http://example.com">
+        <alerts>
+
+            <alertitem>
+                <pluginid>40018</pluginid>
+                <alert>SQL Injection</alert>
+                <riskcode>3</riskcode>
+                <desc>SQL injection was detected.</desc>
+
+                <instances>
+                    <instance>
+                        <uri>http://example.com/login</uri>
+                        <method>GET</method>
+                    </instance>
+
+                    <instance>
+                        <uri>http://example.com/register</uri>
+                        <method>POST</method>
+                    </instance>
+
+                    <instance>
+                        <uri>http://example.com/admin</uri>
+                        <method>GET</method>
+                    </instance>
+                </instances>
+            </alertitem>
+
+            <alertitem>
+                <pluginid>10021</pluginid>
+                <alert>X-Content-Type-Options Header Missing</alert>
+                <riskcode>1</riskcode>
+                <desc>X-Content-Type-Options header is missing.</desc>
+
+                <instances>
+                    <instance>
+                        <uri>http://example.com/</uri>
+                        <method>GET</method>
+                    </instance>
+                </instances>
+            </alertitem>
+
+        </alerts>
+    </site>
+
+</OWASPZAPReport>

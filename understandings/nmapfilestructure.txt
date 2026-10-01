@@ -1,0 +1,116 @@
+<nmaprun>
+
+    <host>
+        <address addr="192.168.1.10" addrtype="ipv4"/>
+
+        <ports>
+
+            <port protocol="tcp" portid="22">
+                <state state="open"/>
+                <service name="ssh"/>
+            </port>
+
+            <port protocol="tcp" portid="80">
+                <state state="open"/>
+                <service name="http"/>
+            </port>
+
+        </ports>
+    </host>
+
+
+    <host>
+        <address addr="192.168.1.20" addrtype="ipv4"/>
+
+        <ports>
+
+            <port protocol="tcp" portid="443">
+                <state state="open"/>
+                <service name="https"/>
+            </port>
+
+        </ports>
+    </host>
+
+</nmaprun>
+
+
+
+nmaprun                         ← root
+│
+├── host                        ← host 1
+│   │
+│   ├── address                 ← IP information
+│   │     └── addr = "192.168.1.10"
+│   │
+│   └── ports
+│       │
+│       ├── port
+│       │    ├── protocol = "tcp"
+│       │    ├── portid = "22"
+│       │    ├── state
+│       │    │    └── state = "open"
+│       │    └── service
+│       │         └── name = "ssh"
+│       │
+│       └── port
+│            ├── protocol = "tcp"
+│            ├── portid = "80"
+│            ├── state
+│            │    └── state = "open"
+│            └── service
+│                 └── name = "http"
+│
+└── host                        ← host 2
+    │
+    ├── address
+    │     └── addr = "192.168.1.20"
+    │
+    └── ports
+        │
+        └── port
+             ├── protocol = "tcp"
+             ├── portid = "443"
+             ├── state
+             │    └── state = "open"
+             └── service
+                  └── name = "https"
+
+
+ZAP FILE STRUCTURE
+
+OWASPZAPReport
+└── site
+    ├── @name = "http://example.com"
+    │
+    └── alerts
+        ├── alertitem
+        │   ├── pluginid
+        │   │   └── text = "40018"
+        │   │
+        │   ├── alert
+        │   │   └── text = "SQL Injection"
+        │   │
+        │   ├── riskcode
+        │   │   └── text = "3"
+        │   │
+        │   ├── desc
+        │   │   └── text = "SQL injection was detected."
+        │   │
+        │   └── instances
+        │       └── instance
+        │           ├── uri
+        │           │   └── text = "http://example.com/login"
+        │           │
+        │           └── method
+        │               └── text = "GET"
+        │
+        └── alertitem
+            ├── pluginid
+            ├── alert
+            ├── riskcode
+            ├── desc
+            └── instances
+                └── instance
+                    └── uri
+                    
